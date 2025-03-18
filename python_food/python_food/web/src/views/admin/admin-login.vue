@@ -2,23 +2,23 @@
   <div id="userLayout">
     <div class="user-layout-header">
       <img class="logo" :src="logoImage" alt="" />
-      <span>菜品后台管理系统</span>
+      <span>Dishes backstage management system</span>
     </div>
     <div class="main-container">
       <div class="main">
         <div class="main_right">
-          <h2 class="sys_title">管理员登录</h2>
+          <h2 class="sys_title">admin login</h2>
           <a-form ref="myform" layout="vertical" :model="data.loginForm" :rules="data.rules" :hideRequiredMark="true">
-            <a-form-item name="username" label="账号" :colon="false">
-              <a-input size="large" placeholder="请输入登录账号" v-model:value="data.loginForm.username" @pressEnter="handleSubmit">
+            <a-form-item name="username" label="account" :colon="false">
+              <a-input size="large" placeholder="Please enter your login account" v-model:value="data.loginForm.username" @pressEnter="handleSubmit">
                 <a-icon slot="prefix" type="user" />
               </a-input>
             </a-form-item>
-            <a-form-item name="password" label="密码" :colon="false">
+            <a-form-item name="password" label="password" :colon="false">
               <a-input
                 size="large"
                 type="password"
-                placeholder="请输入登录密码"
+                placeholder="Please enter your login password"
                 v-model:value="data.loginForm.password"
                 @pressEnter="handleSubmit"
               >
@@ -26,7 +26,7 @@
               </a-input>
             </a-form-item>
             <a-form-item style="padding-top: 24px">
-              <a-button class="login-button" type="primary" :loading="loginBtn" size="large" block @click="handleSubmit"> 登录 </a-button>
+              <a-button class="login-button" type="primary" :loading="loginBtn" size="large" block @click="handleSubmit"> login </a-button>
             </a-form-item>
           </a-form>
           <div class="error-tip"></div>
@@ -60,8 +60,8 @@
       password: 'admin123',
     },
     rules: {
-      username: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
-      password: [{ required: true, message: '请输入密码', trigger: 'blur' }],
+      username: [{ required: true, message: 'please input username', trigger: 'blur' }],
+      password: [{ required: true, message: 'please input password', trigger: 'blur' }],
     },
   });
 
@@ -72,7 +72,7 @@
         handleLogin();
       })
       .catch(() => {
-        message.warn('不能为空');
+        message.warn('can not be null');
       });
   };
 
@@ -86,13 +86,13 @@
         loginSuccess();
       })
       .catch((err) => {
-        message.warn(err.msg || '登录失败');
+        message.warn(err.msg || 'login fail');
       });
   };
 
   const loginSuccess = () => {
     router.push({ path: '/admin' });
-    message.success('登录成功！');
+    message.success('login success！');
   };
 </script>
 

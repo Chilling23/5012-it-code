@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -54,8 +55,6 @@ MIDDLEWARE = [
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True  # 允许跨域
-CORS_ALLOW_ALL_ORIGINS = True
-CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'server.urls'
 
@@ -147,7 +146,16 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# INSTALLED_APPS = [
+#     'corsheaders',  # 添加 CORS
+# ]
+#
+# MIDDLEWARE = [
+#     'corsheaders.middleware.CorsMiddleware',  # 添加 CORS 中间件
+# ]
+
+CORS_ALLOW_ALL_ORIGINS = True  # 开发环境下临时开启，生产环境要限制来源
+
 # 跨域配置
 CORS_ALLOW_CREDENTIALS = True
-CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_HEADERS = '*'
