@@ -6,7 +6,7 @@
         <a-space>
           <a-button type="primary" @click="handleAdd">add new</a-button>
           <a-button @click="handleBatchDelete">delete in batches</a-button>
-          <a-input-search addon-before="名称" enter-button @search="onSearch" @change="onSearchChange" />
+          <a-input-search addon-before="name" enter-button @search="onSearch" @change="onSearchChange" />
         </a-space>
       </div>
       <a-table

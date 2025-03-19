@@ -17,7 +17,7 @@ export const useUserStore = defineStore('user', {
   }),
   getters: {},
   actions: {
-    // 用户登录
+    // user login
     async login(loginForm) {
       const result = await userLoginApi(loginForm);
       console.log('result==>', result);
@@ -37,7 +37,7 @@ export const useUserStore = defineStore('user', {
 
       return result;
     },
-    // 用户登出
+    // user logout
     async logout() {
       // await userLogout();
       this.$patch((state) => {
@@ -51,7 +51,7 @@ export const useUserStore = defineStore('user', {
       });
     },
 
-    // 管理员登录
+    // admin login
     async adminLogin(loginForm) {
       const result = await adminLogin(loginForm);
       console.log('result==>', result);
@@ -71,7 +71,7 @@ export const useUserStore = defineStore('user', {
 
       return result;
     },
-    // 管理员登出
+    // admin logout
     async adminLogout() {
       // await userLogout();
       this.$patch((state) => {
