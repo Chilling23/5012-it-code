@@ -27,8 +27,28 @@
    Run the following SQL command to create the database:
 
    ```sql
-   CREATE DATABASE IF NOT EXISTS shop DEFAULT CHARSET utf8 COLLATE utf8_general_ci;
+   CREATE DATABASE IF NOT EXISTS python_food DEFAULT CHARSET utf8 COLLATE utf8_general_ci;
    ```
+Database document:python_food_2.sql
+
+Database Settings:
+python_food/python_food/server/server/settings.py
+   ```java
+   DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'python_food',
+        'USER': 'root',
+        'PASSWORD': '123456',
+        'HOST': 'localhost',
+        'PORT': '3306',
+        'OPTIONS': {
+            "init_command": "SET foreign_key_checks = 0;",
+        }
+    }
+}
+   ```
+
 
 4. **Restore `shop.sql` Data**
 
